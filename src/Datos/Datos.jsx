@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './Datos.module.scss';
 
-export function Datos({ datos }) {
+export function Datos({ nombre, fecha }) {
 
     function handleName(e) {
-        datos({ nombre: e.target.value });
+        nombre(e.target.value);
     }
 
     function handleDate(e) {
-        datos({ fecha: e.target.value });
+        fecha(e.target.value);
     }
 
     return (

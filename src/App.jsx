@@ -5,16 +5,14 @@ import { Resultado } from './Resultado/Resultado';
 
 export function App() {
 
-    const [datos, setDatos] = useState({
-        nombre: null,
-        fecha: null
-    });
+    const [nombre, setNombre] = useState('');
+    const [fecha, setFecha] = useState('');
 
     return (
         <React.Fragment>
             <Header />
-            <Datos datos={setDatos} />
-            <Resultado datos={datos} />
+            <Datos nombre={setNombre} fecha={setFecha} />
+            <Resultado nombre={nombre} fecha={fecha} />
         </React.Fragment>
     )
 }

@@ -1,23 +1,29 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { ResultadoItem } from '../ResultadoItem/ResultadoItem';
 import styles from './Resultado.module.scss';
 
-export function Resultado({ datos }) {
+export function Resultado({ nombre, fecha }) {
 
     useEffect(() => {
-        console.log('nombre: ', datos.nombre);
-        console.log('fecha: ', datos.fecha);
-    }, [datos]);
+        console.log('nombre: ', nombre);
+        console.log('fecha: ', fecha);
 
-    if (!datos.nombre || !datos.fecha) {
+    }, [nombre, fecha]);
+
+    if (!nombre || !fecha) {
         return <div></div>
     }
+
+    const resultados = [];
 
     return (
         <section className={styles.resultado}>
             <h2 className={styles.titulo}>Resultado:</h2>
-            <div id="resultado" className="accordion">
-
-            </div>
+            <ul id="resultado" className="accordion">
+                {resultados.map((movie) => (
+                    <ResultadoItem key={movie.id} movie={movie} />
+                ))}
+            </ul>
         </section>
     )
 }
