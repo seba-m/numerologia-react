@@ -1,0 +1,13 @@
+@import "../scss/app.scss";
+
+.datos {
+    display: grid;
+    grid-auto-flow: row;
+    grid-gap: 1rem;
+    justify-items: center;
+    align-items: center;
+
+    @include telefono {
+        grid-auto-flow: column;
+    }
+}
